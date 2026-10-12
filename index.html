@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Book an appointment – Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="stripe"></div>
+<div class="demo">Demo only. Nothing you enter here is saved or sent.</div>
+<main class="wrap">
+  <h1 id="shop">Sharp &amp; Sons Barbers</h1>
+  <p class="lead" id="tag">Pick a service, choose a time, and you're booked. No calls, no waiting on hold.</p>
+  <div class="types" role="group" aria-label="Preview as">
+    <button type="button" data-t="barber" aria-pressed="true">Barber</button>
+    <button type="button" data-t="salon" aria-pressed="false">Hair salon</button>
+    <button type="button" data-t="nails" aria-pressed="false">Nails &amp; beauty</button>
+  </div>
+
+  <div class="grid">
+    <form id="f" novalidate>
+      <div id="formBody">
+        <fieldset><legend>Service</legend><div class="opts" id="services"></div></fieldset>
+        <fieldset><legend>Who with</legend>
+          <label class="f">Staff member<select id="staff"></select></label>
+        </fieldset>
+        <fieldset><legend>Day<span id="mon"></span></legend><div class="dayslider"><button type="button" class="arr" id="prev" aria-label="Earlier days">‹</button><div class="days" id="days"></div><button type="button" class="arr" id="next" aria-label="Later days">›</button></div></fieldset>
+        <fieldset><legend>Time</legend><div class="slots" id="slots"></div></fieldset>
+        <fieldset><legend>Your details</legend>
+          <div class="fields">
+            <label class="f">Full name<input id="name" autocomplete="name" placeholder="Alex Morgan"></label>
+            <label class="f">Mobile number<input id="phone" type="tel" autocomplete="tel" placeholder="07123 456789"></label>
+            <label class="f full">Email<input id="email" type="email" autocomplete="email" placeholder="alex@example.com"></label>
+            <label class="f full">Anything we should know? (optional)<textarea id="note" rows="2" placeholder="Allergies, reference photo, first visit..."></textarea></label>
+          </div>
+        </fieldset>
+        <p class="err" id="err" role="alert"></p>
+        <button class="cta" type="submit">Confirm booking</button>
+      </div>
+      <div class="done" id="done" hidden></div>
+    </form>
+
+    <aside class="sum" aria-live="polite">
+      <h3>Your booking</h3>
+      <dl>
+        <dt>Service</dt><dd id="sS">Not chosen yet</dd>
+        <dt>With</dt><dd id="sP">Anyone available</dd>
+        <dt>When</dt><dd id="sW">Not chosen yet</dd>
+      </dl>
+      <div class="tot"><span>Total</span><span id="sT">$0</span></div>
+    </aside>
+  </div>
+  <footer>Demo booking page. Your name, colours and services go here.</footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
